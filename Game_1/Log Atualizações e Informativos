@@ -13,6 +13,7 @@ v 1.1.0 beta:
  = Para proximo patch = 
  #Balancear os atributos de monstros e do Sypher
  #Adicionar sistema de loot (possibilidade de receber itens ao matar monstros)
+ ______________________________________________________________________________________
  
  v 1.0.1:
  + Adicionado uma função para gerar um inimigo quando Sypher der um passo
