@@ -1,7 +1,20 @@
 =======================
 ==Log de atualizações==
 =======================
-v 1.0.1:
+v 1.1.0 beta:
+ + Jogo agora está em loop até o Sypher morrer
+ + Adicionado várias funções para o jogo
+ + Adicionado uma função que seleciona entre o slime e o esqueleto no jogo principal
+ * Funções corrigidas
+ * Jogo principal corrigido
+ bug> Pode haver um erro na hora de escolher o monstro depois da primeira luta
+ bug2> O menu aparece após o personagem morrer, em seguida o jogo acaba
+ 
+ = Para proximo patch = 
+ #Balancear os atributos de monstros e do Sypher
+ #Adicionar sistema de loot (possibilidade de receber itens ao matar monstros)
+ 
+ v 1.0.1:
  + Adicionado uma função para gerar um inimigo quando Sypher der um passo
  + Adicionado uma função para o ataque do esqueleto
  + Adicionado sistema de nível
@@ -19,18 +32,4 @@ Pontos de vida = 20
 Ataque = 3~7
 Moedas = 5
 Experiência = 10 
- 
-v 1.1.0 beta:
- + Jogo agora está em loop até o Sypher morrer
- + Adicionado várias funções para o jogo
- + Adicionado uma função que seleciona entre o slime e o esqueleto no jogo principal
- * Funções corrigidas
- * Jogo principal corrigido
- bug> Pode haver um erro na hora de escolher o monstro depois da primeira luta
- bug2> O menu aparece após o personagem morrer, em seguida o jogo acaba
- 
- = Para proximo patch = 
- #Balancear os atributos de monstros e do Sypher
- #Adicionar sistema de loot (possibilidade de receber itens ao matar monstros)
- 
  
