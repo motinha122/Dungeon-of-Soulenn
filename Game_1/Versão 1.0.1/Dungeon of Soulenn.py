@@ -25,6 +25,8 @@ slime = {'hp':10,'attack min':2,'attack max':5,'coin':3,'xp':5,'lv':1,'max_xp':2
 
 skeleton = {'hp':20,'attack min':3,'attack max':7,'coin':5,'xp':10,'lv':1,'max_xp':40} #Esqueleto
 
+enemy = [slime,skeleton]
+
 inventario = {} #Inventário para guardar itens
 
 Coin_bag = 10   #Bolsa de dinheiro
@@ -39,7 +41,22 @@ def move():         #Função para movimento baseado em floors, cada floor rando
         print("\33[1;36m=== Você venceu a Dungeon ===\33[m")
     return floor,Dungeon1
 
-def menu(x):
+def monster():         #Função aleatória para gerar um inimigo
+    m_s = 0
+    m_e = randint(0,5)
+    if m_e == 5:
+        print("\33[1;31m=== Um inimigo aparece sorrateiramente ===\33[m")
+        m_s = randint(1,2)
+        if m_s == 1:
+            print("\33[1;31m=== Um Esqueleto com seu tremendo arco nórdico ===\33[m")
+        if m_s == 2:
+            print("\33[1;31m=== Um pequeno Slime roxo ===\33[m")
+
+    return m_s
+
+
+def menu():
+    x=int(input("\n\33[1m1.Inventário - 2.Status - 3.Andar - 4.Salvar > \33[m"))
 
     if x == 1:
         print("\n\33[1m === Você possui {} moeda(s) ===\33[m".format(Coin_bag))
@@ -52,16 +69,25 @@ def menu(x):
 
     if x == 3:
         move()
+        print("\n\33[1;36m=== Você deu um passo adentro da masmorra ===\33[m")
+        monster()
 
+    if x!= 1 and x!= 2 and x!= 3:
+        menu()
 
     #if menu1 == 4:   função salvar ainda n implementada ;-;
 
-    return menu1
+    return x
 
 def slime_attack():
     s_a = randint(-slime['attack max'],-slime['attack min'])
     main_char['hp'] += s_a
     return s_a
+
+def skeleton_attack():
+    sk_a = randint(-skeleton['attack max'],-skeleton['attack min'])
+    main_char['hp'] += sk_a
+    return sk_a
 
 def random_attack():
     c_a = randint(-main_char['attack max'],-main_char['attack min'])
@@ -75,7 +101,7 @@ def atacar():
 
 while slime['hp'] > 0:
 #    select_act()
-    x=str(input("\33[2;34m 1.Atacar - 2.Usar item \33[m\33[1;37m>\33[m"))
+    x=str(input("\33[2;34m1.Atacar - 2.Usar item \33[m\33[1;37m>\33[m"))
     print('\n')
     if x == '1':
         print("Dano causado:\33[1;32m{}\33[m".format(-1*random_attack()))
@@ -93,18 +119,24 @@ while slime['hp'] > 0:
         else:
             print("potato")
 
-
     if main_char['hp'] <= 0:
         print('\n\33[1;31m===== Você morreu =====\33[m')
         break
     if slime['hp'] <= 0:
-        print('\n\33[1;34m=== Você matou um slime e ganhou {} moeda(s) ===\33[m'.format(slime['coin']))
+        print('\n\33[1;34m=== Você matou um slime e ganhou {} moeda(s) + {} xp ===\33[m'.format(slime['coin'],slime['xp']))
         Coin_bag += slime['coin']
+        main_char['xp'] += slime['xp']
+        if main_char['xp'] >= main_char['max_xp']:
+            main_char['xp'] = 0
+            main_char['lv'] += 1
+            print('\n\33[1;34m=== Você subiu para o nível {} ===\33[m'.format(main_char['lv']))
+        slime['hp'] = 10
+        break
     #slime
 
-menu1=int(input("\n\33[1m1.Inventário - 2.Status - 3.Andar - 4.Salvar > \33[m"))
+#print("\n\33[1m1.Inventário - 2.Status - 3.Andar - 4.Salvar > \33[m")
+#x=int(input("\n\33[1m1.Inventário - 2.Status - 3.Andar - 4.Salvar > \33[m"))
 
-while menu1!=1 and menu1!=2 and menu1!=3 and menu1!=4:
-    menu1=int(input("\n\33[1m1.Inventário - 2.Status - 3.Andar - 4.Salvar > \33[m"))
+while True:
+    menu()
 
-menu(menu1)

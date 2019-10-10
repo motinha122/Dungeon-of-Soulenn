@@ -1,0 +1,24 @@
+=======================
+==Log de atualizações==
+=======================
+v 1.0.1:
+ + Adicionado uma função para gerar um inimigo quando Sypher der um passo
+ + Adicionado uma função para o ataque do esqueleto
+ + Adicionado sistema de nível
+ - Removida ultima função para o menu(foi atualizado)
+ * Menu de combate atualizado 
+ * Função menu atualizada
+ 
+ > Monstro adicionado [Esqueleto]:
+ "Com seu arco, sua espada e sua insaciável sede por vingança,
+ o esqueleto não se rende a qualquer inimigo, levando o lema de 
+ sua antiga civilização em suas caçadas: Faca, fogo e ferro."
+	
+Nível Médio
+Pontos de vida = 20
+Ataque = 3~7
+Moedas = 5
+Experiência = 10 
+ 
+ 
+ 
