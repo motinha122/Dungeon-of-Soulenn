@@ -1,6 +1,25 @@
 =======================
 ==Log de atualizações==
 =======================
+v 1.1.1 beta:
+ + Adicionado função para mostrar itens do inventário
+ + Atributos do Sypher balanceado:
+	Vida aumentou de 50 para 100
+	Ataque aumentou de 2~5 para 4~8
+ + Adicionado 2 itens para teste no inventário:
+	1.Poção de vida 
+	2.Faca de manteiga
+ * Função de batalha corrigida
+ * Bug do menu infinito corrigido
+ * Alterações no menu
+ * Correções na forma que os menus são mostrados no terminal
+ - Removido "4.Salvar" do menu(será implementado futuramente)
+ - Removido jogo principal ao iniciar 
+ - Removido "defende" dos atributos de Sypher
+ = Para proximo patch = 
+ #Adicionar sistema de loot
+ #Adicionar cidade(grande atualização futura) 
+ 
 v 1.1.0 beta:
  + Jogo agora está em loop até o Sypher morrer
  + Adicionado várias funções para o jogo
@@ -33,5 +52,3 @@ Pontos de vida = 20
 Ataque = 3~7
 Moedas = 5
 Experiência = 10 
-
-
