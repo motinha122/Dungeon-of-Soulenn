@@ -3,6 +3,27 @@
 = = Log de atualizações = =
 = ======================= =
 = = = = = = = = = = = = = =
+
+v 1.3.0 beta:
+ + Função para mostrar e escolher espada
+ + Função para mostrar poções
+ * Função ainda não utiliza a espada nem a poção
+ = Para proximo patch = 
+ #Finalizar funções de escolha de itens
+ #Adicionar a cidade principal
+ #Adicionar a loja
+
+v 1.2.5 beta:
+ # Lançamento da versão do jogo para terminal (sem cores) #
+obs: A versão de terminal é o mesmo jogo, só q sem cores e com execução mais rapida
+
+v 1.2.0 beta:
+ + Função para escolher item
+ * Correções em algumas funções
+ - Removido: Poção de Vida e Faca de Manteiga
+
+obs: Devido ao longo tempo de inatividade, não lembro ao certo o q foi alterado na versão 1.2.0, já está sendo trabalhada a versão 1.5 como uma grande atualização
+ 
 v 1.1.1 beta:
  + Adicionado função para mostrar itens do inventário
  + Atributos do Sypher balanceado:
