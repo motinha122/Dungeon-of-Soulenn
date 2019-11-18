@@ -22,7 +22,8 @@ v 1.2.0 beta:
  * Correções em algumas funções
  - Removido: Poção de Vida e Faca de Manteiga
 
-obs: Devido ao longo tempo de inatividade, não lembro ao certo o q foi alterado na versão 1.2.0, já está sendo trabalhada a versão 1.5 como uma grande atualização
+obs: Devido ao longo tempo de inatividade, não lembro ao certo o q foi alterado na versão 1.2.0, já está sendo trabalhada a versão 1.5 
+como uma grande atualização
  
 v 1.1.1 beta:
  + Adicionado função para mostrar itens do inventário
