@@ -4,6 +4,17 @@
 = ======================= =
 = = = = = = = = = = = = = =
 
+v 1.4.0 beta:
++ Função de loja(compra e venda de itens) adicionada 
++ Cidade principal adicionada 
++ Função para usar itens
++ Variedade de espadas adicionadas 
+* Funções corrigidas 
+* Balanceamento do personagem principal e inimigos
+= Para proximo patch =
+# Adicionar nova dungeon 
+# Adicionar mais inimigos
+
 v 1.3.0 beta:
  + Função para mostrar e escolher espada
  + Função para mostrar poções
