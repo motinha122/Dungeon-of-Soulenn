@@ -55,13 +55,16 @@ akh_pot = [pot_life]
 
 # ============== Sypher =================
 
-sypher = {'max_hp': 100, 'hp': 100, 'attack min': 4, 'attack max': 8, 'xp': 0, 'lv': 1, 'max_xp': 20,'coin': 1000}  # Personagem principal(Sypher)
+sypher = {'max_hp': 100, 'hp': 100, 'attack min': 4, 'attack max': 8, 'xp': 0, 'lv': 1, 'max_xp': 20,
+          'coin': 1000}  # Personagem principal(Sypher)
 
 # ============== Lista de inimigos =================
 
-slime = {'max_hp': 10, 'hp': 10, 'attack min': 2, 'attack max': 5, 'coin': 3, 'xp': 5, 'lv': 1, 'max_xp': 20,'loot': Swd_slime}  # Slime
+slime = {'max_hp': 10, 'hp': 10, 'attack min': 2, 'attack max': 5, 'coin': 3, 'xp': 5, 'lv': 1, 'max_xp': 20,
+         'loot': Swd_slime}  # Slime
 
-skeleton = {'max_hp': 20, 'hp': 20, 'attack min': 3, 'attack max': 7, 'coin': 5, 'xp': 10, 'lv': 1, 'max_xp': 40,'loot': Swd_osso}  # Esqueleto
+skeleton = {'max_hp': 20, 'hp': 20, 'attack min': 3, 'attack max': 7, 'coin': 5, 'xp': 10, 'lv': 1, 'max_xp': 40,
+            'loot': Swd_osso}  # Esqueleto
 
 # ============== Inventário do personagem  =================
 
@@ -125,7 +128,8 @@ def item_select(inv):  # Função que seleciona o item do inventário
             itt['use'] = 0  # Uso sempre será 0, sendo ativado na escolha( 1 por vez ativo)
             it_id += 1  # Id sempre será de 1 até o final da lista0
 
-        item = int(input('\33[1;36m> \33[m'))  # Recebe um número informado q corresponda ao número do item no inventário
+        item = int(
+            input('\33[1;36m> \33[m'))  # Recebe um número informado q corresponda ao número do item no inventário
 
         id_r = 0  # Variavel para indicar id verdadeiro ou não
 
@@ -152,7 +156,8 @@ def item_select(inv):  # Função que seleciona o item do inventário
             itt['use'] = 0  # Uso sempre será 0, sendo ativado na escolha( 1 por vez ativo)
             it_id += 1  # Id sempre será de 1 até o final da lista
 
-        item = int(input('\33[1;36m> \33[m'))  # Recebe um número informado q corresponda ao número do item no inventário
+        item = int(
+            input('\33[1;36m> \33[m'))  # Recebe um número informado q corresponda ao número do item no inventário
 
         id_r = 0  # Variavel para indicar id verdadeiro ou não
 
@@ -180,6 +185,7 @@ def item_select(inv):  # Função que seleciona o item do inventário
         else:
             item_select(inv)
 
+
 # === Funções Loja ===
 
 def c_item_show(item):  # Função para mostrar os itens da Loja
@@ -191,17 +197,18 @@ def c_item_show(item):  # Função para mostrar os itens da Loja
 
     print('\n')
 
+
 def v_item_show(item):  # Função para mostrar os itens da Loja
 
     nm = 1
     for m in item:
-        print('\n{}\33[1;34m.{}\33[m {} moedas(x{})'.format(nm, m['nome'], m['preço'],m['qtd']), end='  ')
+        print('\n{}\33[1;34m.{}\33[m {} moedas(x{})'.format(nm, m['nome'], m['preço'], m['qtd']), end='  ')
         nm += 1
 
     print('\n')
 
 
-def v_item_select(inv,city,city_swd,city_pot):  # Função que seleciona o item do inventário
+def v_item_select(inv, city, city_swd, city_pot):  # Função que seleciona o item do inventário
 
     if inv == espadas:
         print('\33[1;36mQual espada deseja vender? \33[m')
@@ -224,20 +231,20 @@ def v_item_select(inv,city,city_swd,city_pot):  # Função que seleciona o item 
     if id_r == 1:  # Se x for verdadeiro (há id igual ao numero inserido pelo usuario), ele mostrá o item correspondente
         item -= 1  # Como o número é um indice, tem q ser retirado 1 do valor
         print(('\33[1;35mDeseja vender > {}\33[m'.format(inv[item]['nome'])))
-        z=int(input('\33[1;35m1.Sim    2.Não >\33[m'))  # Indice e chave [index][key]
-        if z ==1:
+        z = int(input('\33[1;35m1.Sim    2.Não >\33[m'))  # Indice e chave [index][key]
+        if z == 1:
 
             sypher['coin'] += inv[item]['preço']
             inv[item]['qtd'] -= 1  # Retira 1 da quantidade do item que foi vendido
             if inv[item]['qtd'] == 0:  # Caso a quantidade do item seja 1 ou menor
                 inv.remove(inv[item])  # Remove o item do inventário
         else:
-            loja(city,city_swd,city_pot)
+            loja(city, city_swd, city_pot)
     else:
-        loja(city,city_swd,city_pot)
+        loja(city, city_swd, city_pot)
 
 
-def c_item_select(inv,city,city_swd,city_pot): # Função para seleção de item da loja
+def c_item_select(inv, city, city_swd, city_pot):  # Função para seleção de item da loja
 
     global item
 
@@ -258,65 +265,66 @@ def c_item_select(inv,city,city_swd,city_pot): # Função para seleção de item
         item -= 1  # Como o número é um indice, tem q ser retirado 1 do valor
         print('\33[1;35mDeseja Comprar > {}\33[m'.format(inv[item]['nome']))  # Indice e chave [index][key]
     else:
-        loja(city,city_swd,city_pot)
+        loja(city, city_swd, city_pot)
 
     return item
 
-def c_item_buy(inv,s_inv,city,city_swd,city_pot):  # Recebe o atributo do inventário da loja e do personagem
+
+def c_item_buy(inv, s_inv, city, city_swd, city_pot):  # Recebe o atributo do inventário da loja e do personagem
 
     flag = 0
 
     if inv[item]['preço'] <= sypher['coin']:  # Caso o preço seja menor ou igual a quantidade de moedas
-        sypher['coin'] -= inv[item]['preço']    # Subtrai o preço
-        for itt in s_inv:   # Checka o inventário de sypher para saber se ele já tem ou não o item
+        sypher['coin'] -= inv[item]['preço']  # Subtrai o preço
+        for itt in s_inv:  # Checka o inventário de sypher para saber se ele já tem ou não o item
             if itt == inv[item]:
-                itt['qtd'] += 1 # Se tiver adiciona 1 na quantidade
+                itt['qtd'] += 1  # Se tiver adiciona 1 na quantidade
                 flag = 1
         if flag == 0:
-            s_inv.append(inv[item])     # Se n tiver adiciona o item ao inventário
+            s_inv.append(inv[item])  # Se n tiver adiciona o item ao inventário
         print('\33[1;32m=== Comprou {} ==='.format(inv[item]['nome']))
         print('\n\33[1m Você possui {} moedas\33[m'.format(sypher['coin']))
     else:
         print("\n\33[1;32m=== Moedas Insuficientes ===")
-        loja(city,city_swd,city_pot)
+        loja(city, city_swd, city_pot)
 
 
-
-def loja(city,city_swd,city_pot):       # Loja
+def loja(city, city_swd, city_pot):  # Loja
 
     print("\n\33[1;35m=== Bem vindo a loja de {} ===\33[m\n".format(city['nome']))
     print("\33[1;34mGostaria de comprar ou vender um item?")
     sel = int(input("\33[1;34m1.Comprar - 2.Vender > "))
 
-    if sel == 1:    # Caso o jogador queira comprar um item
+    if sel == 1:  # Caso o jogador queira comprar um item
         cop = int(input("\33[1m1.Espadas - 2.Poções > "))
         print('\n\33[1m Você possui {} moedas\33[m'.format(sypher['coin']))
         if cop == 1:
             c_item_show(city_swd)
-            c_item_select(city_swd,city,city_swd,city_pot)
-            c_item_buy(city_swd,espadas,city,city_swd,city_pot)
+            c_item_select(city_swd, city, city_swd, city_pot)
+            c_item_buy(city_swd, espadas, city, city_swd, city_pot)
         if cop == 2:
             c_item_show(city_pot)
-            c_item_select(city_pot,city,city_swd,city_pot)
-            c_item_buy(city_pot,pocoes,city,city_swd,city_pot)
+            c_item_select(city_pot, city, city_swd, city_pot)
+            c_item_buy(city_pot, pocoes, city, city_swd, city_pot)
         else:
-            menu_cd(city,city_swd,city_pot) # Caso  não seja um número da lista, retorna ao menu
+            menu_cd(city, city_swd, city_pot)  # Caso  não seja um número da lista, retorna ao menu
 
-    if sel == 2:    # Caso o jogador queira vender um item
-         cop = int(input("\33[1m1.Espadas - 2.Poções > "))
-         print('\n\33[1m Você possui {} moedas\33[m'.format(sypher['coin']))
-         if cop ==1 and len(espadas) !=0:
-             v_item_show(espadas)
-             v_item_select(espadas,city,city_swd,city_pot)
-         if cop ==2 and len(pocoes) !=0:
-             v_item_show(pocoes)
-             v_item_select(pocoes,city,city_swd,city_pot)
-         else:
-             print("\33[1;31mNão há nada neste inventário para vender\33[m")
+    if sel == 2:  # Caso o jogador queira vender um item
+        cop = int(input("\33[1m1.Espadas - 2.Poções > "))
+        print('\n\33[1m Você possui {} moedas\33[m'.format(sypher['coin']))
+        if cop == 1 and len(espadas) != 0:
+            v_item_show(espadas)
+            v_item_select(espadas, city, city_swd, city_pot)
+        if cop == 2 and len(pocoes) != 0:
+            v_item_show(pocoes)
+            v_item_select(pocoes, city, city_swd, city_pot)
+        else:
+            print("\33[1;31mNão há nada neste inventário para vender\33[m")
     else:
-        menu_cd(city,city_swd,city_pot) # Caso  não seja um número da lista, retorna ao menu
+        menu_cd(city, city_swd, city_pot)  # Caso  não seja um número da lista, retorna ao menu
 
-#======
+
+# ======
 
 def move_dg(dg):  # Função para movimento baseado em floors, cada floor randomiza o algoritmo evento
 
@@ -386,7 +394,7 @@ def status():  # Status (vida,xp,nivel...)
     print("\33[1;36m Moedas: \33[1;32m{}\33[m\t\t\t\t".format(sypher['coin']))
 
 
-def menu_cd(city,city_swd,city_pot):  # Menu da cidade
+def menu_cd(city, city_swd, city_pot):  # Menu da cidade
 
     print('\33[1m==========================================================')
     x = int(input("1.Inventário - 2.Status - 3.Andar - 4.Loja > "))
@@ -403,10 +411,10 @@ def menu_cd(city,city_swd,city_pot):  # Menu da cidade
         print("\n\33[1;36m=== Você deu um passo na cidade de {} {}/10 ===\n\33[m".format(city['nome'], city['floor']))
 
     if x == 4:  # Loja de espadas e poções
-        loja(city,city_swd,city_pot)
+        loja(city, city_swd, city_pot)
 
     if x != 1 and x != 2 and x != 3 and x != 4:  # Caso não seja 1,2,3 e 4 repete a função
-        menu_cd(city,city_swd,city_pot)
+        menu_cd(city, city_swd, city_pot)
 
 
 def menu():  # Menu principal
@@ -538,4 +546,4 @@ while dead != 1:  # Enquanto Sypher não morre, o jogo roda o menu
     if dgwin != 1:
         menu()
     else:
-        menu_cd(Akhato,akh_swd,akh_pot)
+        menu_cd(Akhato, akh_swd, akh_pot)
