@@ -24,7 +24,7 @@ print("...")
 
 # ============== Masmorra =================
 
-Dungeon1 = {'floor': 0}  # Quantidade de pisos da masmorra
+Dungeon1 = {'floor': 15}  # Quantidade de pisos da masmorra
 
 # ============== Lista de espadas vendidas em lojas =================
 
