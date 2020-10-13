@@ -46,11 +46,10 @@ pot_life = {'nome': 'Poção de vida +25', 'id': 0, 'qtd': 3, 'use': 0, 'preço'
 
 # ============== Cidades e Lojas =================
 
-# --------- Akhato ----------
+# --------- Ahkhato ----------
 
-Akhato = {'floor': 0, 'nome': 'Akhato', 'max_floor': 10}  # Quantidade de pisos da primeira cidade
-
-akh_swd = [Swd_ferro, Swd_bronze, Swd_prata, Swd_ouro]  # Lista de itens da loja de Akhato
+Ahkhato = {'floor': 0, 'nome': 'Ahkhato', 'max_floor': 10}  # Quantidade de pisos da primeira cidade
+akh_swd = [Swd_ferro, Swd_bronze, Swd_prata, Swd_ouro]  # Lista de itens da loja de Ahkhato
 akh_pot = [pot_life]
 
 # ============== Sypher =================
@@ -339,7 +338,7 @@ def move_dg(dg):  # Função para movimento baseado em floors, cada floor random
             sleep(0.7)
             print("...\n")
         dgwin = 1
-        print("\33[1;35m\"Seja bem vindo a cidade de Akhato\"\33[m\n")
+        print("\33[1;35m\"Seja bem vindo a cidade de Ahkhato\"\33[m\n")
 
     return dgwin
 
@@ -546,4 +545,4 @@ while dead != 1:  # Enquanto Sypher não morre, o jogo roda o menu
     if dgwin != 1:
         menu()
     else:
-        menu_cd(Akhato, akh_swd, akh_pot)
+        menu_cd(Ahkhato, akh_swd, akh_pot)
